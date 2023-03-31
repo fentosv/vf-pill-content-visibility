@@ -16,13 +16,43 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <header>
+      <nav>
+        <a href='/'>Content-visibility: visible</a>
+        <a href='/auto'>Content-visibility: auto</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 <style is:global>
   html {
     font-family: system-ui, sans-serif;
     background-color: #f6f6f6;
+  }
+  header {
+    margin: auto;
+    width: fit-content;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.4rem;
+  }
+
+  main {
+    --accent: #820000;
+    --accent-opacity: #82000033;
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
   }
 
   code {
