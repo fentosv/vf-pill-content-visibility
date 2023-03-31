@@ -9,5 +9,13 @@ const contentVisibility = ContentVisibility.visible
 
 <Layout title={`Vf Pill | Content-visibility: ${contentVisibility}`}>
   <Information contentVisibility={contentVisibility} />
-  <Content />
+  <section>
+    <Content />
+  </section>
 </Layout>
+
+<style>
+  section {
+    --content-visibility: visible;
+  }
+</style>
